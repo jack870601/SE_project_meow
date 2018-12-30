@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from views.home import home
+from  views.home import home
 #from views.Board import Board
 
 

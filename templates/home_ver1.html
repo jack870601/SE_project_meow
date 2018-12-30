@@ -7,23 +7,28 @@
             background: #FFAACC;
 	}
 	.main {
-        flex-grow: 1;
-	    height: 700px;
+            flex-grow: 1;
+	    height: 500px;
 	    margin-top: 20px;
 	    background-color: white;
 	}
 	.left {
 	    order: -1;
 	    flex: 0 1 200px;
-	    margin:20px 20px 0px 20px;
-	    height: 300px;
+	    margin-right: 20px;
+	    margin-left: 20px;
+	    margin-top: 20px;
+	    height: 250px;
 	    background-color: white;
 	}
 	.right {
 	    flex: 0 1 200px;
-        margin: 40px 20px 20px 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom:  20px;
 	    height: 700px;
-	    background-color: yellow;
+	    background-color: white;
 	}
 	.a_css{
 		height: 50px;
@@ -39,48 +44,19 @@
 		margin-left: 20px;
 		font-weight:bold;
 	}
-
-	.post{
-     flex-grow: 1;
-	 height: 200px;
-
-	 margin:20px 20px 0px 20px;
-	
-	 background-color: gray;
-
-
-	}
     </style>
 </head>
-
 <body>
 
 
     <div class="container">
-		<div class="main">
-
-			<!-- -->
-
-
-			<div class="post">
-			朋友約跑ㄇ
-			</div>
-			<div class="post">
-			朋友約跑ㄇ
-			</div>
-			<div class="post">
-			朋友約跑ㄇ
-			</div>
-			
-
-		</div>
+		<div class="main"></div>
 		<div class="left">
-			<p class="p_css">台科約跑網</p>
+			<p class="p_css">台科約跑網</p>	
 			<a class="a_css" href="">Home</a>
 			<a class="a_css" href="">個人資料</a>
 			<a class="a_css" href="">抽卡</a>
 			<a class="a_css" href="">商店</a>
-			<a class="a_css" href="">設定</a>
 		</div>
 		<div class="right"><a class="a_css" href="#">login</a></div>
     </div>
