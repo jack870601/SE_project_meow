@@ -1,0 +1,6 @@
+Nano .gitignore ->.DS_Stores
+Git branch dev/milli
+Git checkout dev/milli
+Git add .
+Git commit -m "喵幹"
+Git push origin dev/milli
