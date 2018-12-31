@@ -1,9 +1,8 @@
 class user():
 
     #def __init__(self, id, picture, username, password, first_name, last_name, birthday, join_date, last_login, login_count, is_admin, is_active, profile, follower, following):
-    def __init__(self, id, picture, username, password):    
+    def __init__(self, id, username, password):    
         self.id = id
-        self.picture = picture
         self.username = username
         self.password = password
         # self.first_name = first_name
