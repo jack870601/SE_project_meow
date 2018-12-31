@@ -1,0 +1,86 @@
+<html>
+ <head>
+ <title>抽抽跑友</title> 
+ <script type="text/javascript"> 
+ <!--
+  
+  // code to generate and display random numbers, using values entered by a user on a form
+  // (namely BALLS_DRAWN and MAX_NUMBER), for use as lottery numbers etc.
+  // Copyright (C) Rhodus Corp 1997 [rhodus@geocities.com]
+  // do not use this code in whole or in part without including these four lines.
+  
+ var loop;        //loop counter
+ var randy;        //holds random numbers
+  
+ function make_array(size)        //creates a one-dimensional array
+ {
+   this.length = size;
+         for (a=0; a<size; a++) this[a]="";
+ }
+  
+ function generatenos()                //flags certain numbers in a one-dimensional array
+ {
+         hold = new make_array(document.lottery.max_number.value);
+  
+         document.lottery.numbers.value = "";    //clear numbers box
+  
+         //now we need to generate some numbers------------------
+         for(loop=0;loop<document.lottery.balls_drawn.value;loop++)        //1 step through loop for each ball to be drawn
+         {
+                 randy = Math.round(Math.random()*(document.lottery.max_number.value-1));
+                 randy++;        //ie. number between 0+1 (=1) and max_value-1+1 (=max_value)
+  
+                 if(hold[randy]==1)
+                 {
+                         loop--;                //if number already chosen, go back one step in the loop
+                         continue;                //and start again (so no duplicate numbers)
+                 }
+  
+                 if(hold[randy]!=1)
+                 {
+                         hold[randy]=1;        //if not already flagged, then flag the number in the 'hold' list
+                 }
+         }
+         //----------------------------------------------------
+  
+  
+         //now we need to display the numbers----------------
+         for(loop=0;loop<=document.lottery.max_number.value;loop++)
+         {
+                 if(hold[loop]==1)        //ie. if 'loop' is flagged
+                 document.lottery.numbers.value = document.lottery.numbers.value + loop + ", ";        //display on 'numbers' text field, seperated by commas
+         }
+  
+         //---------------------------------------------------
+ }
+ // -->
+ </script>
+ <style>
+   body{
+     background-image: url("https://i.imgur.com/PvVZPW5.jpg");
+     }
+ .button{
+ 
+   border:            none;
+   background:        none;
+   padding:           20px 120px;
+   background-image:  url(https://i.imgur.com/pbrKwVi.png);
+   background-repeat: no-repeat;
+   outline:           none;
+   position:absolute;top:340px;left:720px;
+ }
+ </style>
+ </head> 
+ <body> 
+ <h2 style="color:#F8C3CD;font-family:Microsoft JhengHei;position:absolute;left:100px;top:30px;">｜　來抽出你的跑友吧!!　|</h2>
+ <form name="lottery" style="position:absolute;left:200px;top:150px;"> 
+   你要多少人的啦?<br> 
+   <input type="text" name="balls_drawn" size=2 value="1"><br><br> 
+   總共多少的人啦?<br> 
+   <input type="text" name="max_number" size=2 value="4"><br><br> 
+   你抽到的是?:<br> 
+   <input type="text" name="numbers" size=40 maxlength=40 value=""><br> 
+   <input type="button" value="generate" onclick="generatenos();"><br><br> 
+ </form> 
+ </body> 
+ </html>  
