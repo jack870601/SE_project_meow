@@ -1,0 +1,244 @@
+
+	<!--
+		Future Imperfect by HTML5 UP
+		html5up.net | @ajlkn
+		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	-->
+	<html>
+		<head>
+			<title>Meow Meow</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css') }}" />
+		</head>
+		<body class="is-preload">
+
+			<!-- Wrapper -->
+				<div id="wrapper">
+
+					<!-- Header -->
+						<header id="header">
+							<h1>台科約跑網</a></h1>
+							<nav class="links">
+								<ul>
+									<li><a href="person">個人資料</a></li>
+									<li><a href="lottery">抽卡</a></li>
+									<li><a href="title">稱號商城</a></li>
+									<li><a href="home">首頁</a></li>
+									
+								</ul>
+							</nav>
+							<section>
+									<ul class="actions stacked">
+										<li><a href="login" class="button large fit">Log In</a></li>
+									</ul>
+							</section>
+
+
+							<!-- <nav class="main">
+
+								<ul>
+
+									<li class="search">
+										<a class="fa-search" href="#search">Search</a>
+										<form id="search" method="get" action="#">
+											<input type="text" name="query" placeholder="Search" />
+										</form>
+									</li>
+									<li class="menu">
+										<a class="fa-bars" href="#menu">Menu</a>
+									</li>
+								</ul>
+							</nav> -->
+						</header>
+
+					<!-- Menu -->
+						<section id="menu">
+
+							<!-- Search -->
+								<section>
+									<form class="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Links -->
+								
+
+							<!-- Actions -->
+								
+
+						</section>
+
+					<!-- Main -->
+						<div id="main">
+
+
+							<article class="post">
+									<header>
+										<div class="title">
+											<h2>個人資料</h2>
+										</div>
+										
+									</header>
+									
+								<ul class="User_Data">
+									<li class="user-img">
+    									<h2>Photo:</h2>
+    									<img src="{{url_for('static',filename='images/user.png')}}" alt="" />
+  									</li>
+  									<br>
+  									<li class="user-ID">
+    									<h2>ID:</h2>
+    									<span style="color: red;">B10530026</span>
+    									<a href="home"></a>
+  									</li>
+  									<br>
+  									<li class="user-money">
+    									<h2>約跑幣:     <span>$120</span></h2>
+    									<a href="home"><font face="微軟正黑體">多發文才有約跑幣喔^^<br>姆咪</font><br></a>
+  									</li>
+  									<br>
+  									<li class="user-title">
+    									<h2>稱號:     <span>無</span></h2>
+    									<input type ="button" onclick="javascript:location.href='title'" value="前往稱號商城"></input>
+  									</li>
+  									<br>
+  									<style>
+									.button_title {
+										 display: inline-block;
+										 padding: 10px 20px;
+  										 font-size: 16px;
+  										cursor: pointer;
+  										text-align: center;
+  										text-decoration: none;
+  										outline: none;
+  										color: #fff;
+  										background-color: #e7e7e7;
+  										border: none;
+  										border-radius: 15px;
+  										box-shadow: 0 9px #999;
+									}
+
+									.button:hover {
+  										background-color: black;
+									}
+									.button_title:active {
+  									background-color: #3e8e41;
+  									box-shadow: 0 5px #666;
+  									transform: translateY(4px);
+									}
+									</style>
+								</ul>	
+							
+								</article>
+							<!-- Post -->
+								
+
+
+
+
+
+							<!-- Pagination -->
+								<ul class="actions pagination">
+									<li><a href="" class="disabled button large previous">Previous Page</a></li>
+									<li><a href="#" class="button large next">Next Page</a></li>
+								</ul>
+
+						</div>
+
+					<!-- Sidebar -->
+						<section id="sidebar">
+
+							<!-- Intro -->
+								<section id="intro">
+									<a href="#" class="logo"><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
+									<header>
+										<h2>土豪GG臭酸</h2>
+										<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+									</header>
+								</section>
+
+							<!-- Mini Posts -->
+								<section>
+									<div class="mini-posts">
+
+										<!-- Mini Post -->
+											<article class="mini-post">
+												<header>
+													<h3><a href="single.html">Vitae sed condimentum</a></h3>
+													<time class="published" datetime="2015-10-20">October 20, 2015</time>
+													<a href="#" class="author"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></a>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic04.jpg')}}" alt="" /></a>
+											</article>
+
+											
+
+									</div>
+								</section>
+
+							<!-- Posts List -->
+								<section>
+									<ul class="posts">
+										<li>
+											<article>
+												<header>
+													<h3><a href="single.html">Lorem ipsum fermentum ut nisl vitae</a></h3>
+													<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic08.jpg')}}" alt="" /></a>
+											</article>
+										</li>
+										<li>
+											<article>
+												<header>
+													<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
+													<time class="published" datetime="2015-10-15">October 15, 2015</time>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic09.jpg')}}" alt="" /></a>
+											</article>
+										</li>
+										<li>
+											<article>
+												<header>
+													<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
+													<time class="published" datetime="2015-10-10">October 10, 2015</time>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic10.jpg')}}" alt="" /></a>
+											</article>
+										</li>
+										<li>
+											<article>
+												<header>
+													<h3><a href="single.html">Magna enim accumsan tortor cursus ultricies</a></h3>
+													<time class="published" datetime="2015-10-08">October 8, 2015</time>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic11.jpg')}}" alt="" /></a>
+											</article>
+										</li>
+										<li>
+											<article>
+												<header>
+													<h3><a href="single.html">Congue ullam corper lorem ipsum dolor</a></h3>
+													<time class="published" datetime="2015-10-06">October 7, 2015</time>
+												</header>
+												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic12.jpg')}}" alt="" /></a>
+											</article>
+										</li>
+									</ul>
+								</section>
+
+
+						</section>
+
+				</div>
+
+			<!-- Scripts -->
+				<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
+				<script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
+				<script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
+				<script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+		</body>
+	</html>
