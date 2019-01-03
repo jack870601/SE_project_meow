@@ -1,87 +1,116 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>抽抽跑友</title> 
-<script type="text/javascript"> 
-<!--
- 
- // code to generate and display random numbers, using values entered by a user on a form
- // (namely BALLS_DRAWN and MAX_NUMBER), for use as lottery numbers etc.
- // Copyright (C) Rhodus Corp 1997 [rhodus@geocities.com]
- // do not use this code in whole or in part without including these four lines.
- 
-var loop;        //loop counter
-var randy;        //holds random numbers
- 
-function make_array(size)        //creates a one-dimensional array
-{
-  this.length = size;
-        for (a=0; a<size; a++) this[a]="";
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+.wrap {
+width: 400px;
+margin: 30px auto;
 }
- 
-function generatenos()                //flags certain numbers in a one-dimensional array
-{
-        hold = new make_array(document.lottery.max_number.value);
- 
-        document.lottery.numbers.value = "";    //clear numbers box
- 
-        //now we need to generate some numbers------------------
-        for(loop=0;loop<document.lottery.balls_drawn.value;loop++)        //1 step through loop for each ball to be drawn
-        {
-                randy = Math.round(Math.random()*(document.lottery.max_number.value-1));
-                randy++;        //ie. number between 0+1 (=1) and max_value-1+1 (=max_value)
- 
-                if(hold[randy]==1)
-                {
-                        loop--;                //if number already chosen, go back one step in the loop
-                        continue;                //and start again (so no duplicate numbers)
-                }
- 
-                if(hold[randy]!=1)
-                {
-                        hold[randy]=1;        //if not already flagged, then flag the number in the 'hold' list
-                }
-        }
-        //----------------------------------------------------
- 
- 
-        //now we need to display the numbers----------------
-        for(loop=0;loop<=document.lottery.max_number.value;loop++)
-        {
-                if(hold[loop]==1)        //ie. if 'loop' is flagged
-                document.lottery.numbers.value = document.lottery.numbers.value + loop + ", ";        //display on 'numbers' text field, seperated by commas
-        }
- 
-        //---------------------------------------------------
+textarea {
+display: block;
+width: 100%;
+height: 60px;
 }
-// -->
-</script>
-<style>
-  body{
-    background-image: url("https://i.imgur.com/PvVZPW5.jpg");
-    }
-.button{
-
-  border:            none;
-  background:        none;
-  padding:           20px 120px;
-  background-image:  url(https://i.imgur.com/pbrKwVi.png);
-  background-repeat: no-repeat;
-  outline:           none;
-  position:absolute;top:340px;left:720px;
+input {
+display: block;
+width: 60%;
+margin: 15px auto;
+}
+li {
+padding: 5px 10px;
+position: relative;
+word-break: break-all;
+}
+.red {
+color: #000;
+background: #f1f1f1;
+} 
+.pink {
+color: #000;
+background: #ccc;
+}
+a {
+position: absolute;
+right: 0;
+top: -20px;
+background: yellow;
+color: #fff;
+} 
+#list {
+margin: 0;
+padding: 0;
+list-style: none;
+font: 14px/26px "宋體";
+}
+.clos {
+position: absolute;
+top: 0;
+right: -50px;
+width: 50px;
+color: #fff;
+background: #000;
+padding: 5px 0;
+text-decoration: none;
+text-align: center;
+}
+.clos:hover {
+box-shadow: 0 0 5px rgba(0,0,0,.5)
 }
 </style>
-</head> 
-<body> 
-<h2 style="color:#F8C3CD;font-family:Microsoft JhengHei;position:absolute;left:100px;top:30px;">｜　來抽出你的跑友吧!!　|</h2>
-<form name="lottery" style="position:absolute;left:200px;top:150px;"> 
-  你要多少人的啦?<br> 
-  <input type="text" name="balls_drawn" size=2 value="1"><br><br> 
-  總共多少的人啦?<br> 
-  <input type="text" name="max_number" size=2 value="4"><br><br> 
-  你抽到的是?:<br> 
-  <input type="text" name="numbers" size=40 maxlength=40 value=""><br> 
-  <input type="button" value="generate" onclick="generatenos();"><br><br> 
-</form> 
-</body> 
-</html> 
+<script type="text/javascript">
+window.onload = function(){
+var btn = document.querySelector('input');
+var text = document.querySelector('textarea');
+var list = document.querySelector('#list');
+var colors = ["red","pink"];
+var nub = 0;
+btn.onclick = function(){
+if(text.value.trim() == ""){
+alert("打點字吧");
+return false;
+}
+var li = document.createElement("li");
+li.innerHTML = text.value;
+// li.className = colors[nub%colors.length];
+/* 判斷a標籤已經被新增，就讓a標籤顯示出來，否則就新增 */
+if(list.children[0]&&list.children[0].className=="red"){
+li.className = "pink";
+} else {
+li.className = "red";
+}
+var a = null;
+li.onmouseover = function(){
+if(a) {
+a.style.display = "block";
+} else {
+a = document.createElement("a");
+a.href = "javascript:;";
+a.className = "clos";
+a.innerHTML = "刪除";
+a.onclick = function (){
+list.removeChild(this.parentNode);
+};
+this.appendChild(a);
+}
+};
+li.onmouseout = function(){
+a.style.display = "none";
+};
+list.insertBefore(li,list.children[0]);
+text.value = "";
+nub  ;
+};
+}; 
+</script>
+</head>
+<body>
+<div>
+<div class="wrap">
+<textarea id="text"></textarea>
+<input type="button" value="建立元素">
+<ul id="list"></ul>
+</div> 
+</body>
+</html>

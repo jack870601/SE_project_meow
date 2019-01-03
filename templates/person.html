@@ -30,8 +30,7 @@
 							</nav>
 							<section>
 									<ul class="actions stacked">
-										<li><a href="login" class="button large fit">Log In</a>
-										</li>
+										<li><a href="login" class="button large fit">Log In</a></li>
 									</ul>
 							</section>
 
@@ -78,52 +77,66 @@
 							<article class="post">
 									<header>
 										<div class="title">
-											<h2>標題</h2>
-											<input class="inp_title"></input>
+											<h2>個人資料</h2>
 										</div>
 										
 									</header>
 									
-									
-								<h2>Message</h2>
-								<input class="inp"></input>
-								<button class="button2">提交貼文</button>
+								<ul class="User_Data">
+									<li class="user-img">
+    									<h2>Photo:</h2>
+    									<img src="{{url_for('static',filename='images/user.png')}}" alt="" />
+  									</li>
+  									<br>
+  									<li class="user-ID">
+    									<h2>ID:</h2>
+    									<span style="color: red;">B10530026</span>
+    									<a href="home"></a>
+  									</li>
+  									<br>
+  									<li class="user-money">
+    									<h2>約跑幣:     <span>$120</span></h2>
+    									<a href="home"><font face="微軟正黑體">多發文才有約跑幣喔^^<br>姆咪</font><br></a>
+  									</li>
+  									<br>
+  									<li class="user-title">
+    									<h2>稱號:     <span>無</span></h2>
+    									<input type ="button" onclick="javascript:location.href='title'" value="前往稱號商城"></input>
+  									</li>
+  									<br>
+  									<style>
+									.button_title {
+										 display: inline-block;
+										 padding: 10px 20px;
+  										 font-size: 16px;
+  										cursor: pointer;
+  										text-align: center;
+  										text-decoration: none;
+  										outline: none;
+  										color: #fff;
+  										background-color: #e7e7e7;
+  										border: none;
+  										border-radius: 15px;
+  										box-shadow: 0 9px #999;
+									}
 
+									.button:hover {
+  										background-color: black;
+									}
+									.button_title:active {
+  									background-color: #3e8e41;
+  									box-shadow: 0 5px #666;
+  									transform: translateY(4px);
+									}
+									</style>
+								</ul>	
+							
 								</article>
 							<!-- Post -->
-								<article class="post">
-									<header>
-										<div class="title">
-											<h2><a href="single.html">約跑嗎朋友</a></h2>
-											
-										</div>
-										<div class="meta">
-											<time class="published" datetime="2015-11-01">November 1, 2015</time>
-											<a href="#" class="author"><span class="name">涼軒大ㄐㄐ</span><img src="images/user.png" alt="" /></a>
-										</div>
-									</header>
-									
-									<p>約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友</p>
-									
-								</article>
+								
 
 
 
-								<article class="post">
-									<header>
-										<div class="title">
-											<h2><a href="single.html">約跑嗎朋友</a></h2>
-											
-										</div>
-										<div class="meta">
-											<time class="published" datetime="2015-11-01">November 1, 2015</time>
-											<a href="#" class="author"><span class="name">涼軒大ㄐㄐ</span><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
-										</div>
-									</header>
-									
-									<p>約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友</p>
-									
-								</article>
 
 
 							<!-- Pagination -->
