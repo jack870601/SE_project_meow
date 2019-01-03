@@ -11,6 +11,7 @@ from  controller.logout import logout
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '123456'
 app.register_blueprint(direct)
 app.register_blueprint(home)
 app.register_blueprint(login)
@@ -25,5 +26,4 @@ def router():
 
 
 if __name__ == '__main__':
-	app.config['SECRET_KEY'] = '123456'
 	app.run(debug=True)
