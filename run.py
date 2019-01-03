@@ -5,6 +5,7 @@ from controller.login import login
 from controller.title import title
 from controller.lottery import lottery
 from controller.person import person
+from controller.register import register
 
 #from views.Board import Board
 
