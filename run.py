@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,session
 from  controller.direct import direct
 from  controller.home import home
 from  controller.login import login
@@ -11,7 +11,7 @@ from  controller.logout import logout
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '123456'
+app.secret_key = "super secret key"
 app.register_blueprint(direct)
 app.register_blueprint(home)
 app.register_blueprint(login)
@@ -26,4 +26,7 @@ def router():
 
 
 if __name__ == '__main__':
+    # Generate secret_key:
+    # $ python -c "import os, binascii;print(binascii.hexlify(os.urandom(24)))"
+    # $ export TACA_SECRET=***
 	app.run(debug=True)
