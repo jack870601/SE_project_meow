@@ -1,193 +1,188 @@
+<!--
+        Future Imperfect by HTML5 UP
+        html5up.net | @ajlkn
+        Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{username}}</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+	<link href="{{url_for('static',filename='assets/css/main.css') }}" rel="stylesheet" title="gray">
+	<link href="{{url_for('static',filename='assets/css/blue.css') }}" rel="stylesheet" title="blue">
+	<link href="{{url_for('static',filename='assets/css/red.css') }}" rel="stylesheet" title="red">
+</head>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<h1>台科約跑網</h1>
+			<nav class="links">
+				<ul>
+					<li>
+						<a href="#" onclick="setStyle();">切換主題</a>
+					</li>
+					<li>
+						<a href="/person">個人資料</a>
+					</li>
+					<li>
+						<a href="/lottery">抽卡</a>
+					</li>
+					<li>
+						<a href="/title">稱號商城</a>
+					</li>
+					<li>
+						<a href="/home/1">首頁</a>
+					</li>
+				</ul>
+			</nav>
+			<section>
+                  <ul class="actions stacked">
+                    {% if username %}
+                    <li><a href="/logout" class="button large fit">
+                    Log Out
+                    </a></li>
+                    {% else %}
+                    <li><a href="/login" class="button large fit">
+                    Log In
+                    </a></li>
+                    {% endif %}
+                  </ul>
+              </section><!-- <nav class="main">
 
-	<!--
-		Future Imperfect by HTML5 UP
-		html5up.net | @ajlkn
-		Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	-->
-	<html>
-		<head>
+                                <ul>
 
-			<title>{{username}}</title>
-			<meta charset="utf-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-			<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css') }}" />
-		</head>
-		<body class="is-preload">
-
-			<!-- Wrapper -->
-				<div id="wrapper">
-
-					<!-- Header -->
-						<header id="header">
-							<h1>台科約跑網</a></h1>
-							<nav class="links">
-								<ul>
-									<li><a href="/person">個人資料</a></li>
-									<li><a href="/lottery">抽卡</a></li>
-									<li><a href="/title">稱號商城</a></li>
-									<li><a href="/home/1">首頁</a></li>
-									
-								</ul>
-							</nav>
-							<section>
-									<ul class="actions stacked">
-										{% if username %}
-										<li><a href="/logout" class="button large fit">
-										Log Out
-										</a></li>
-										{% else %}
-										<li><a href="/login" class="button large fit">
-										Log In
-										</a></li>
-										{% endif %}
-									</ul>
-							</section>
-
-
-							<!-- <nav class="main">
-
-								<ul>
-
-									<li class="search">
-										<a class="fa-search" href="#search">Search</a>
-										<form id="search" method="get" action="#">
-											<input type="text" name="query" placeholder="Search" />
-										</form>
-									</li>
-									<li class="menu">
-										<a class="fa-bars" href="#menu">Menu</a>
-									</li>
-								</ul>
-							</nav> -->
-						</header>
-
-					<!-- Menu -->
-						<section id="menu">
-
-							<!-- Search -->
-								<section>
-									<form class="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Links -->
-								
-
-							<!-- Actions -->
-								
-
-						</section>
-
-					<!-- Main -->
-						<div id="main">
-
-
-
-							{% if username %}
-
-
-							<article class="post">
-								<form method="POST">
-									<header>
-										<div class="title">
-											<h2>標題</h2>
-											<input class="inp_title" name = "title"></input>
-										</div>
-										
-									</header>
-									
-								<h2>Message</h2>
-									<input class="inp" name = "description" ></input>
-								<div class="container-login100-form-btn m-t-17">
-								<input type="submit" value="發佈貼文" >
-								</div>
-								</form>
-							</article>
-
-
-							{% endif %}
-
-							<!-- Post -->
-							{% for post in post_all %}
-								<article class="post">
-									
-									<header>
-										<div class="title">
-											<h2><a href="/home/1">{{post.title}}</a></h2>
-											
-										</div>
-										<div class="meta">
-											<!-- <time class="published" datetime="2015-11-01">November 1, 2015</time> -->
-											<a href="#" class="author"><span class="name">{{post.username}}</span><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
-										</div>
-									</header>
-									
-									<p>{{post.description}}</p>
-									
-								</article>
-								{% endfor %}
-
+                                    <li class="search">
+                                        <a class="fa-search" href="#search">Search</a>
+                                        <form id="search" method="get" action="#">
+                                            <input type="text" name="query" placeholder="Search" />
+                                        </form>
+                                    </li>
+                                    <li class="menu">
+                                        <a class="fa-bars" href="#menu">Menu</a>
+                                    </li>
+                                </ul>
+                            </nav> -->
+		</header><!-- Menu -->
+		<section id="menu">
+			<!-- Search -->
+			<section>
+				<form action="#" class="search" method="get">
+					<input name="query" placeholder="Search" type="text">
+				</form>
+			</section><!-- Links -->
+			<!-- Actions -->
+		</section><!-- Main -->
+		<div id="main">
+			{% if username %}
+			<article class="post">
+				<form method="post">
+					<header>
+						<div class="title">
+							<h2>標題</h2><input class="inp_title" name="title">
 						</div>
+					</header>
+					<h2>Message</h2><input class="inp" name="description">
+					<div class="container-login100-form-btn m-t-17">
+						<input type="submit" value="發佈貼文">
+					</div>
+				</form>
+			</article>{% endif %} <!-- Post -->
+			 {% for post in post_all %}
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="/home/1">{{post.title}}</a></h2>
+					</div>
+					<div class="meta">
+						<!-- <time class="published" datetime="2015-11-01">November 1, 2015</time> -->
+						<a class="author" href="#"><span class="name">{{post.username}}</span><img alt="" src="{{url_for('static',filename='images/user.png')}}"></a>
+					</div>
+				</header>
+				<p>{{post.description}}</p>
+			</article>{% endfor %}
+		</div><!-- Sidebar -->
+		<section id="sidebar">
+			<!-- Intro -->
+			<section id="intro">
+				<a class="logo" href="#"><img alt="" src="{{url_for('static',filename='images/user.png')}}"></a>
+				<header>
+					<h2>使用者：{{username}}</h2>
+				</header>
+			</section><!-- Posts List -->
+			<section>
+				<ul class="posts">
+					<li>
+						<article>
+							<header>
+								<h3><a href="/home/1">約跑版</a></h3><!-- <time class="published" datetime="2015-10-20">October 20, 2015</time> -->
+							</header><a class="image" href="/home/1"><img alt="" src="{{url_for('static',filename='images/3.jpg')}}"></a>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<h3><a href="/home/2">哈拉版</a></h3><!-- <time class="published" datetime="2015-10-15">October 15, 2015</time> -->
+							</header><a class="image" href="/home/2"><img alt="" src="{{url_for('static',filename='images/2.jpg')}}"></a>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<h3><a href="/home/3">番號版</a></h3>
+							</header><a class="image" href="/home/3"><img alt="" src="{{url_for('static',filename='images/5.jpg')}}"></a>
+						</article>
+					</li>
+				</ul><a class="image" href="#"><img alt="" src="{{url_for('static',filename='images/milk.jpg')}}"></a><br>
+				<a class="image" href="#"><img alt="" src="{{url_for('static',filename='images/sex.jpg')}}"></a><br>
+				<a class="image" href="#"><img alt="" src="{{url_for('static',filename='images/pig.jpg')}}"></a>
+			</section>
+		</section>
+	</div><!-- Scripts -->
+	<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}">
+	</script> 
+	<script src="{{url_for('static',filename='assets/js/browser.min.js')}}">
+	</script> 
+	<script src="{{url_for('static',filename='assets/js/util.js')}}">
+	</script> 
+	<script src="{{url_for('static',filename='assets/js/main.js')}}">
+	</script> 
+	<script type="text/javascript">
 
-					<!-- Sidebar -->
-						<section id="sidebar">
+		var title = "gray";
 
-							<!-- Intro -->
-								<section id="intro">
-									<a href="#" class="logo"><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
-									<header>
-										<h2>使用者：{{username}}</h2>
-									</header>
-								</section>
+	 	function setStyle(){
+	   
+	   //只是样式A 和样式B切换
+	   if(title=="gray"){
+	        title = "blue";
+	   }else if(title=="blue"){
+	   		title = "red";
+	   }else if(title=="red"){
+	   		title="gray";
+	   }
+	   
+	   
+	   var i,links;
+	   //用dom方法获取所有link元素
+	   links = document.getElementsByTagName("link");
+	   //判断每个link元素中是否含有style字符串 ，用来判断此link元素为样式表link ，同时判断此link是否包含title属性
+	   for(i=0; links[i]; i++){
+	       if(links[i].getAttribute("rel").indexOf("style") != -1 && links[i].getAttribute("title")){
+	           //把所有link设为disabled
+	           links[i].disabled = true;
+	           //再来判断title中是否有指定的title字符串 有则把当前的link设为可视 即激活当前的link 
+	           if(links[i].getAttribute("title").indexOf(title) != -1){
+	               links[i].disabled = false;
+	               //alert("ok");
+	           }
+	               
+	       }
+	   }
+	               }
 
-						
-							<!-- Posts List -->
-								<section>
-									<ul class="posts">
-										<li>
-											<article>
-												<header>
-													<h3><a href="/home/1" >約跑版</a></h3>
-													<!-- <time class="published" datetime="2015-10-20">October 20, 2015</time> -->
-												</header>
-												<a href="/home/1" class="image"><img src="{{url_for('static',filename='images/3.jpg')}}" alt="" /></a>
-											</article>
-										</li>
-										<li>
-											<article>
-												<header>
-													<h3><a href="/home/2">哈拉版</a></h3>
-													<!-- <time class="published" datetime="2015-10-15">October 15, 2015</time> -->
-												</header>
-												<a href="/home/2" class="image"><img src="{{url_for('static',filename='images/2.jpg')}}" alt="" /></a>
-											</article>
-										</li>
-										<li>
-											<article>
-												<header>
-													<h3><a href="/home/3">番號版</a></h3>
-													
-												</header>
-												<a href="/home/3" class="image"><img src="{{url_for('static',filename='images/5.jpg')}}" alt="" /></a>
-											</article>
-										</li>
-									</ul>
-									
-								</section>
-
-
-						</section>
-
-				</div>
-
-			<!-- Scripts -->
-				<script src="{{url_for('static',filename='assets/js/jquery.min.js')}}"></script>
-				<script src="{{url_for('static',filename='assets/js/browser.min.js')}}"></script>
-				<script src="{{url_for('static',filename='assets/js/util.js')}}"></script>
-				<script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
-
-		</body>
-	</html>
-
-
+	</script>
+</body>
+</html>

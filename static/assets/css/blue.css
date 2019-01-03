@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f4f4f4;
+		background: steelblue;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -116,7 +116,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #646464;
+		color: black;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 14pt;
 		font-weight: 400;
@@ -1948,7 +1948,7 @@ input, select, textarea {
 		button.large,
 		.button.large {
 			font-size: 0.7em;
-			padding: 20em 3em;
+			padding: 0 3em;
 		}
 
 		input[type="submit"].small,
@@ -3319,6 +3319,8 @@ input, select, textarea {
 
 			#wrapper {
 				padding: 3em;
+				background-color: blue;
+				
 			}
 
 		}
@@ -3327,6 +3329,7 @@ input, select, textarea {
 
 			#wrapper {
 				display: block;
+				background: gray;
 			}
 
 		}
