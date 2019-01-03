@@ -25,5 +25,5 @@ def router():
 
 
 if __name__ == '__main__':
-	app.secret_key = 'some secret key'
+	app.config['SECRET_KEY'] = '123456'
 	app.run(debug=True)
