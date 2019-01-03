@@ -5,6 +5,6 @@ from flask import Flask, render_template,Blueprint, request
 
 register = Blueprint('register',__name__)
 @register.route('/register') #定義URL
-def router_login():
+def router_register():
     return render_template('/register.html')
 
