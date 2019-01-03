@@ -1,5 +1,5 @@
-from models.pg_model import pg_model
-from models.sqlite import sqlite_model
+#from models.pg_model import pg_model
+from model.sqlite import sqlite_model
 import os
 
 
@@ -13,7 +13,7 @@ class model():
     """
 
     def create(self):
-        return model.dao.create(type(self).__name__, self.__dict__)
+        return model.dao.create(type(self).__name__, **self.__dict__)
     """
     Q(name=name)
     Q.add(description=description, Q.OR)
@@ -30,6 +30,14 @@ class model():
     @classmethod
     def filter(cls, **kwargs):
         return model.dao.filter(cls.__name__, **kwargs)
+    """
+    # update sex board name and description example
+    sex_id = Board.filter(name="sex")[0].id # get sex board # id
+    Board.update(sex_id, name="supersex", description="update name")
+    """
+    @classmethod
+    def update(cls, id, **kwargs):
+        return model.dao.update(cls.__name__, **kwargs)
 
 
 class Q():

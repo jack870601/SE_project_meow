@@ -5,7 +5,7 @@
 	-->
 	<html>
 		<head>
-			<title>Meow Meow</title>
+			<title>{{username}}</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css') }}" />
@@ -20,16 +20,24 @@
 							<h1>台科約跑網</a></h1>
 							<nav class="links">
 								<ul>
-									<li><a href="person">個人資料</a></li>
-									<li><a href="lottery">抽卡</a></li>
-									<li><a href="title">稱號商城</a></li>
-									<li><a href="home">首頁</a></li>
+									<li><a href="/person">個人資料</a></li>
+									<li><a href="/lottery">抽卡</a></li>
+									<li><a href="/title">稱號商城</a></li>
+									<li><a href="/home/1">首頁</a></li>
 									
 								</ul>
 							</nav>
 							<section>
 									<ul class="actions stacked">
-										<li><a href="login" class="button large fit">Log In</a></li>
+										{% if username %}
+										<li><a href="logout" class="button large fit">
+										Log Out
+										</a></li>
+										{% else %}
+										<li><a href="login" class="button large fit">
+										Log In
+										</a></li>
+										{% endif %}
 									</ul>
 							</section>
 
@@ -71,33 +79,33 @@
 						<div id="main">
 
 
-							<article class="post">
+							<article class="post" >
 									<header>
-										<div class="title">
+										<div class="title" style="text-align: center">
 											<h2>個人資料</h2>
 										</div>
 										
 									</header>
 									
 								<ul class="User_Data">
-									<li class="user-img">
+									<li class="user-img" style="text-align: center">
     									<h2>Photo:</h2>
-    									<img src="{{url_for('static',filename='images/user.png')}}" alt="" />
+    									<img src="{{url_for('static',filename='images/user.png')}}" align="center" alt="" />
   									</li>
   									<br>
-  									<li class="user-ID">
-    									<h2>ID:</h2>
-    									<span style="color: red;">B10530026</span>
+  									<li class="user-ID" style="text-align: center">
+    									<h2>ID：{{username}}</h2>
+    									<br>
     									<a href="home"></a>
   									</li>
   									<br>
-  									<li class="user-money">
-    									<h2>約跑幣:     <span>$120</span></h2>
+  									<li class="user-money" style="text-align: center">
+    									<h2>約跑幣:     <span>{{coin}}</span></h2>
     									<a href="home"><font face="微軟正黑體">多發文才有約跑幣喔^^<br>姆咪</font><br></a>
   									</li>
   									<br>
-  									<li class="user-title">
-    									<h2>稱號:     <span>無</span></h2>
+  									<li class="user-title" style="text-align: center">
+    									<h2>稱號:<span>{{title}}</span></h2>
     									<input type ="button" onclick="javascript:location.href='title'" value="前往稱號商城"></input>
   									</li>
   									<br>
@@ -129,17 +137,7 @@
 							
 								</article>
 							<!-- Post -->
-								
-
-
-
-
-
-							<!-- Pagination -->
-								<ul class="actions pagination">
-									<li><a href="" class="disabled button large previous">Previous Page</a></li>
-									<li><a href="#" class="button large next">Next Page</a></li>
-								</ul>
+				
 
 						</div>
 

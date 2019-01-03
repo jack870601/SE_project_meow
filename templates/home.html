@@ -6,7 +6,8 @@
 	-->
 	<html>
 		<head>
-			<title>Meow Meow</title>
+
+			<title>{{username}}</title>
 			<meta charset="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 			<link rel="stylesheet" href="{{url_for('static',filename='assets/css/main.css') }}" />
@@ -21,16 +22,24 @@
 							<h1>台科約跑網</a></h1>
 							<nav class="links">
 								<ul>
-									<li><a href="person">個人資料</a></li>
-									<li><a href="lottery">抽卡</a></li>
-									<li><a href="title">稱號商城</a></li>
-									<li><a href="home">首頁</a></li>
+									<li><a href="/person">個人資料</a></li>
+									<li><a href="/lottery">抽卡</a></li>
+									<li><a href="/title">稱號商城</a></li>
+									<li><a href="/home/1">首頁</a></li>
 									
 								</ul>
 							</nav>
 							<section>
 									<ul class="actions stacked">
-										<li><a href="login" class="button large fit">Log In</a></li>
+										{% if username %}
+										<li><a href="/logout" class="button large fit">
+										Log Out
+										</a></li>
+										{% else %}
+										<li><a href="/login" class="button large fit">
+										Log In
+										</a></li>
+										{% endif %}
 									</ul>
 							</section>
 
@@ -74,57 +83,50 @@
 						<div id="main">
 
 
+
+							{% if username %}
+
+
 							<article class="post">
+								<form method="POST">
 									<header>
 										<div class="title">
 											<h2>標題</h2>
-											<input class="inp_title"></input>
+											<input class="inp_title" name = "title"></input>
 										</div>
 										
 									</header>
 									
-									
 								<h2>Message</h2>
-								<input class="inp"></input>
-								<button class="button2">提交貼文</button>
+									<input class="inp" name = "description" ></input>
+								<div class="container-login100-form-btn m-t-17">
+								<input type="submit" value="發佈貼文" >
+								</div>
+								</form>
+							</article>
 
-								</article>
+
+							{% endif %}
+
 							<!-- Post -->
+							{% for post in post_all %}
 								<article class="post">
+									
 									<header>
 										<div class="title">
-											<h2><a href="single.html">約跑嗎朋友</a></h2>
+											<h2><a href="/home/1">{{post.title}}</a></h2>
 											
 										</div>
 										<div class="meta">
-											<time class="published" datetime="2015-11-01">November 1, 2015</time>
-											<a href="#" class="author"><span class="name">涼軒大ㄐㄐ</span><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
+											<!-- <time class="published" datetime="2015-11-01">November 1, 2015</time> -->
+											<a href="#" class="author"><span class="name">{{post.username}}</span><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
 										</div>
 									</header>
 									
-									<p>約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友</p>
+									<p>{{post.description}}</p>
 									
 								</article>
-
-
-
-								<article class="post">
-									<header>
-										<div class="title">
-											<h2><a href="single.html">約跑嗎朋友</a></h2>
-											
-										</div>
-										<div class="meta">
-											<time class="published" datetime="2015-11-01">November 1, 2015</time>
-											<a href="#" class="author"><span class="name">涼軒大ㄐㄐ</span><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
-										</div>
-									</header>
-									
-									<p>約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友約跑嗎朋友</p>
-									
-								</article>
-
-
+								{% endfor %}
 
 						</div>
 
@@ -135,7 +137,7 @@
 								<section id="intro">
 									<a href="#" class="logo"><img src="{{url_for('static',filename='images/user.png')}}" alt="" /></a>
 									<header>
-										<h2>土豪GG臭酸</h2>
+										<h2>使用者：{{username}}</h2>
 									</header>
 								</section>
 
@@ -146,31 +148,32 @@
 										<li>
 											<article>
 												<header>
-													<h3><a href="single.html">約跑版</a></h3>
+													<h3><a href="/home/1" >約跑版</a></h3>
 													<!-- <time class="published" datetime="2015-10-20">October 20, 2015</time> -->
 												</header>
-												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic08.jpg')}}" alt="" /></a>
+												<a href="/home/1" class="image"><img src="{{url_for('static',filename='images/3.jpg')}}" alt="" /></a>
 											</article>
 										</li>
 										<li>
 											<article>
 												<header>
-													<h3><a href="single.html">哈拉版</a></h3>
+													<h3><a href="/home/2">哈拉版</a></h3>
 													<!-- <time class="published" datetime="2015-10-15">October 15, 2015</time> -->
 												</header>
-												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic09.jpg')}}" alt="" /></a>
+												<a href="/home/2" class="image"><img src="{{url_for('static',filename='images/2.jpg')}}" alt="" /></a>
 											</article>
 										</li>
 										<li>
 											<article>
 												<header>
-													<h3><a href="single.html">番號版</a></h3>
+													<h3><a href="/home/3">番號版</a></h3>
 													
 												</header>
-												<a href="single.html" class="image"><img src="{{url_for('static',filename='images/pic10.jpg')}}" alt="" /></a>
+												<a href="/home/3" class="image"><img src="{{url_for('static',filename='images/5.jpg')}}" alt="" /></a>
 											</article>
 										</li>
 									</ul>
+									
 								</section>
 
 
@@ -186,3 +189,5 @@
 
 		</body>
 	</html>
+
+

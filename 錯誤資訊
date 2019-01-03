@@ -1,5 +1,0 @@
-當在run.py 裡面import home.py時
-要去使用到blueprint這個指令
-
-https://stackoverflow.com/questions/38178776/function-object-has-no-attribute-name-when-registering-blueprint
-

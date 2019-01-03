@@ -1,4 +1,4 @@
-from flask import Flask, render_template,Blueprint, request
+from flask import Flask, render_template,Blueprint, request,session
 
 #from views.Board import Board
 
@@ -6,4 +6,9 @@ from flask import Flask, render_template,Blueprint, request
 person = Blueprint('person',__name__)
 @person.route('/person') #定義URL
 def router_login():
-    return render_template('/person.html')
+	if session.get("user"):
+		user = session['user']
+		username = user['username']
+		coin = user['coin']
+		title = user['title']
+	return render_template('/person.html',**locals())

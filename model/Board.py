@@ -1,7 +1,7 @@
-from models.model import model
+from model.model import model
 
 
-class run_Board(model):
+class Board(model):
 
     def __init__(self, name, description):
         self.name = name
