@@ -11,7 +11,7 @@ from  controller.logout import logout
 
 
 app = Flask(__name__)
-app.secret_key = "super secret key"
+
 app.register_blueprint(direct)
 app.register_blueprint(home)
 app.register_blueprint(login)
@@ -26,6 +26,8 @@ def router():
 
 
 if __name__ == '__main__':
+	import os
+	app.secret_key = os.getenv('MEOW_SECRET')
     # Generate secret_key:
     # $ python -c "import os, binascii;print(binascii.hexlify(os.urandom(24)))"
     # $ export TACA_SECRET=***
