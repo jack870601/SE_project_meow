@@ -56,13 +56,13 @@ body {
 }
 
 mark {
-	background-color: transparent;
+	background-color: #f596aa;
 	color: inherit;
 }
 
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+	border: 10;
+	padding: 10;
 }
 
 input, select, textarea {
@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f4f4f4;
+		background: #f596aa;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -116,7 +116,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #646464;
+		color: #f596aa;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 14pt;
 		font-weight: 400;
@@ -126,7 +126,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
 			}
 
 		}
@@ -134,7 +134,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
 			}
 
 		}
@@ -142,7 +142,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
 			}
 
 		}
@@ -150,7 +150,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
 			}
 
 		}
@@ -158,7 +158,7 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			body, input, select, textarea {
-				font-size: 12pt;
+				font-size: 14pt;
 			}
 
 		}
@@ -182,15 +182,15 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: #f596aa !important;
 		}
 
 			a:hover:before {
-				color: #2ebaae !important;
+				color: #f596aa !important;
 			}
 
 	strong, b {
-		color: #3c3b3b;
+		color: #f596aa;
 		font-weight: 700;
 	}
 
@@ -203,7 +203,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3c3b3b;
+		color: #f596aa;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 800;
 		letter-spacing: 0.25em;
@@ -1892,7 +1892,7 @@ input, select, textarea {
 		button:hover,
 		.button:hover {
 			box-shadow: inset 0 0 0 1px #2ebaae;
-			color: #2ebaae !important;
+			color: #f596aa !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -1900,7 +1900,7 @@ input, select, textarea {
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				background-color: rgba(46, 186, 174, 0.05);
+				background-color: #f596aa;
 			}
 
 		input[type="submit"]:before, input[type="submit"]:after,
@@ -1912,7 +1912,7 @@ input, select, textarea {
 		button:after,
 		.button:before,
 		.button:after {
-			color: #aaaaaa;
+			color: #f596aa;
 			position: relative;
 		}
 
@@ -1969,7 +1969,7 @@ input, select, textarea {
 		.button.disabled,
 		.button:disabled {
 			pointer-events: none;
-			color: rgba(160, 160, 160, 0.3) !important;
+			color: #f596aa !important;
 		}
 
 			input[type="submit"].disabled:before, input[type="submit"]:disabled:before,
@@ -1981,7 +1981,7 @@ input, select, textarea {
 			button:disabled:before,
 			.button.disabled:before,
 			.button:disabled:before {
-				color: rgba(160, 160, 160, 0.3) !important;
+				color: #f596aa !important;
 			}
 
 /* Form */
@@ -2005,7 +2005,7 @@ input, select, textarea {
 			}
 
 			form.search:before {
-				color: #aaaaaa;
+				color: #f596aa;
 				content: '\f002';
 				display: block;
 				height: 2.75em;
@@ -2022,7 +2022,7 @@ input, select, textarea {
 			}
 
 	label {
-		color: #3c3b3b;
+		color: #f596aa;
 		display: block;
 		font-size: 0.9em;
 		font-weight: 700;
@@ -2039,7 +2039,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: rgba(160, 160, 160, 0.075);
+		background: #f596aa;
 		border: none;
 		border: solid 1px rgba(160, 160, 160, 0.3);
 		border-radius: 0;
@@ -2066,7 +2066,7 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ebaae;
+			border-color: #f596aa;
 			box-shadow: inset 0 0 0 1px #2ebaae;
 		}
 
@@ -2086,7 +2086,7 @@ input, select, textarea {
 		}
 
 		.select-wrapper:before {
-			color: rgba(160, 160, 160, 0.3);
+			color: #f596aa;
 			content: '\f078';
 			display: block;
 			height: 2.75em;
@@ -2114,8 +2114,8 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #3c3b3b;
-			background: #ffffff;
+			color: #f596aa;
+			background: #f596aa;
 		}
 
 		select:focus::-ms-value {
@@ -2154,7 +2154,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #646464;
+			color: #f596aa;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2176,7 +2176,7 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: rgba(160, 160, 160, 0.075);
+				background: #f596aa;
 				border: solid 1px rgba(160, 160, 160, 0.3);
 				content: '';
 				display: inline-block;
@@ -2191,7 +2191,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #3c3b3b;
+			background: #f596aa;
 			border-color: #3c3b3b;
 			color: #ffffff;
 			content: '\f00c';
@@ -3103,7 +3103,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #ffffff;
+		background-color: #f596aa;
 		border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 		height: 3.5em;
 		left: 0;
@@ -3202,7 +3202,7 @@ input, select, textarea {
 					#header .main ul li > a {
 						text-decoration: none;
 						border-bottom: 0;
-						color: #aaaaaa;
+						color: #f596aa;
 						overflow: hidden;
 						position: relative;
 						text-indent: 4em;
@@ -3472,11 +3472,11 @@ input, select, textarea {
 /* Footer */
 
 	#footer .icons {
-		color: #aaaaaa;
+		color: #f596aa;
 	}
 
 	#footer .copyright {
-		color: #aaaaaa;
+		color: #f596aa;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 0.5em;
 		font-weight: 400;
@@ -3500,7 +3500,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
+		background: #f596aa;
 		border-left: solid 1px rgba(160, 160, 160, 0.3);
 		box-shadow: none;
 		height: 100%;
@@ -3563,7 +3563,7 @@ input, select, textarea {
 					}
 
 					#menu .links > li a:hover h3 {
-						color: #2ebaae;
+						color: #f596aa;
 					}
 
 				#menu .links > li:first-child {
